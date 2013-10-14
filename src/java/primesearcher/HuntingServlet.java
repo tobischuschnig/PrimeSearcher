@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.   
- */
 package primesearcher;
 
 import java.io.IOException;
@@ -14,8 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author tobi
+ * Dises Servlet stellt die Website dar.
+ * Hier werden alle anzeige vorgaenge getaetigt.
+ * @author Tobias Schuschnig
  */
 @WebServlet(name = "HuntingServlet", urlPatterns = {"/primes/searcher"})
 public class HuntingServlet extends HttpServlet {
@@ -24,7 +21,16 @@ public class HuntingServlet extends HttpServlet {
     private PrimeSearcher primes;
     
     /**
+     * Das ist der Standart Konstruktor um Primesearcher zu instanzieren
+     */
+    public HuntingServlet(){        
+        primes= new PrimeSearcher();
+        primes.start();
+    }
+    
+    /**
      * Processes requests for both HTTP
+     * Hier wird alles angezeigt
      * <code>GET</code> and
      * <code>POST</code> methods.
      *
@@ -42,10 +48,16 @@ public class HuntingServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HuntingServlet</title>");            
+            out.println("<title>HuntingServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HuntingServlet at </h1>");
+            out.println("<h1 align='center'>Prime Searcher</h1>");
+            out.println("<hr align=\"center\" color =\"blue\" size=20 width=\"80%\">");
+                //Zeichnen des blauen Balkens
+            out.println( "<p align='center'>Started at " + primes.getBeginnTime().toString() + "</p>" );
+            out.println("<p align='center'>Last prime discovered was <b>" + primes.getPrime() + "</b> at " + primes.getLastTime() + "</p>" );
+            out.println("<hr align=\"center\" color =\"blue\" size=20 width=\"80%\">");
+                //Zeichnen des blauen Balkens
             out.println("</body>");
             out.println("</html>");
         } finally {            
@@ -91,10 +103,15 @@ public class HuntingServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Hunting Servlet zur Anzeige";
     }// </editor-fold>
     
-       @Override
+    /**
+     * Mit dieser Methode wird eine sauperes beenden dermoeglicht.
+     * Zuerst wird die destroy Methode der Super Klasse aufgerufen
+     * Danach die interrupt Methode von Thread
+     */
+    @Override
     public void destroy() {
         super.destroy();
         primes.interrupt();

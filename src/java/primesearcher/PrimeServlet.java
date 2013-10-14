@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.  
- */
+
 package primesearcher;
 
 import java.io.IOException;
@@ -13,14 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *
- * @author tobi
+ * Mit diesem Servlet wir der Redirect durchgefuert
+ * @author Tobias Schuschnig
  */
 @WebServlet(name = "PrimeServlet", urlPatterns = {"/primes"})
 public class PrimeServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP
+     * Hier findet der Redriect statt
      * <code>GET</code> and
      * <code>POST</code> methods.
      *
@@ -33,6 +31,7 @@ public class PrimeServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         response.sendRedirect(request.getContextPath()+"/primes/searcher");
+            //Mit dieser Zeile wird auf das Servlet HuntingServlet redirected
         
     }
 
@@ -74,6 +73,6 @@ public class PrimeServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Short description";
+        return "Redirector Servlet";
     }// </editor-fold>
 }

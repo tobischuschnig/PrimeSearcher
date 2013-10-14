@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package primesearcher;
 
 import java.util.ArrayList;
@@ -11,7 +8,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
+ * Mit dieser Klasse werden die Primzahlen gesucht und diese koennen ausgelesen
+ * werden. Dabei wird ebenfalls der Fundzeitpunkt gespeichert.
  * @author tobi
  */
 public class PrimeSearcher extends Thread{
@@ -20,6 +18,10 @@ public class PrimeSearcher extends Thread{
     private Date ltime;   //Lezte gefundene Primzahl
     private int current;
     
+    /**
+     * Der Standard Konstruktor erstellt alle nötigen Parameter der Klasse
+     * Ebenfalls wird auch schon die erste Primzahl "2" hinzugeuegt
+     */
     public PrimeSearcher() {
         primes = new ArrayList<Integer>();
         btime = Calendar.getInstance().getTime();
@@ -29,7 +31,11 @@ public class PrimeSearcher extends Thread{
                 //geschohnt
     }
     
-    
+    /**
+     * Die run Methode des Threads
+     * Hier wird der calculater aufgerufen und werden die Parameter geaendert
+     * falls eine Primzahl gefunden wurde
+     */
     @Override
     public void run() {
         while (!isInterrupted()) {
@@ -55,7 +61,7 @@ public class PrimeSearcher extends Thread{
      * Berechnet ob es sich um eine Primzahl handelt
      * Code von:http://www.javafaq.nu/java-example-code-1025.html Author: 
      * Eingesehen: 14.10.2013
-     * @return 
+     * @return Ergebnis ob Primzahl oder nicht
      */
     public boolean calculate() {
         long sqrt = (long) Math.sqrt(current);
