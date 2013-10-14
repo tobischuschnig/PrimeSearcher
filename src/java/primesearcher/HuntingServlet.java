@@ -44,7 +44,7 @@ public class HuntingServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            /* TODO output your page here. You may use following sample code. */
+            //Mit Normalen HTML die Site erstellt
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -52,6 +52,7 @@ public class HuntingServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1 align='center'>Prime Searcher</h1>");
+                //Ueberschrifft
             out.println("<hr align=\"center\" color =\"blue\" size=20 width=\"80%\">");
                 //Zeichnen des blauen Balkens
             out.println( "<p align='center'>Started at " + primes.getBeginnTime().toString() + "</p>" );
@@ -103,11 +104,11 @@ public class HuntingServlet extends HttpServlet {
      */
     @Override
     public String getServletInfo() {
-        return "Hunting Servlet zur Anzeige";
+        return "HuntingServlet zur Anzeige";
     }// </editor-fold>
     
     /**
-     * Mit dieser Methode wird eine sauperes beenden dermoeglicht.
+     * Mit dieser Methode wird eine sauperes beenden der Suche ermoeglicht.
      * Zuerst wird die destroy Methode der Super Klasse aufgerufen
      * Danach die interrupt Methode von Thread
      */

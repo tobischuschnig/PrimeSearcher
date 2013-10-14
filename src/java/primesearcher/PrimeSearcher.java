@@ -19,7 +19,7 @@ public class PrimeSearcher extends Thread{
     private int current;
     
     /**
-     * Der Standard Konstruktor erstellt alle nötigen Parameter der Klasse
+     * Der Standard Konstruktor erstellt alle noetigen Parameter der Klasse
      * Ebenfalls wird auch schon die erste Primzahl "2" hinzugeuegt
      */
     public PrimeSearcher() {
@@ -39,20 +39,25 @@ public class PrimeSearcher extends Thread{
     @Override
     public void run() {
         while (!isInterrupted()) {
+            //Aufrufen der calculate Methode um die aktuelle Prizahl zu ueberpruefen
             if(calculate()) {
+                //Falls es sich um eine Handelt wird der Zeitpunkt gespeichert und die aktuelle Zahla als Primzahl
+                //gespeichert
                 ltime = Calendar.getInstance().getTime();
                 primes.add(current);
             }
+            //erhoehen der aktuellen Zahl wird im naechsten Schleifen 
+            //durchgang ueberprueft
             current+=2;
             //Schlafen legen des Threads um eine schonende Resourcen nutzung 
             //zu sichern. Hierfuer wird der Thread fuer 0.2 Sekunden schlafen 
             //gelegt.
             try {
-                this.sleep(200); 
+                this.sleep(200); //Befehl zum Schlafen legen
             }
             catch (InterruptedException ex) { 
                 Logger.getLogger ( PrimeSearcher.class.getName () ).log ( Level.SEVERE, null, ex );
-                //Die interrupt Exception kann hier ingoniriert werden
+                //Speichern der Exception muss allerdings nicht speziell gehandlet werden
             }
         }
     }
