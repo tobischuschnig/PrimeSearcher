@@ -7,6 +7,8 @@ package primesearcher;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,13 +25,29 @@ public class PrimeSearcher extends Thread{
         btime = Calendar.getInstance().getTime();
         primes.add(2);
         current = 3;
+        this.setPriority(Thread.MIN_PRIORITY);  //Dadurch werden Resourcen 
+                //geschohnt
     }
     
     
     @Override
     public void run() {
         while (!isInterrupted()) {
-            if(calculate)
+            if(calculate()) {
+                ltime = Calendar.getInstance().getTime();
+                primes.add(current);
+            }
+            current+=2;
+            //Schlafen legen des Threads um eine schonende Resourcen nutzung 
+            //zu sichern. Hierfuer wird der Thread fuer 0.2 Sekunden schlafen 
+            //gelegt.
+            try {
+                this.sleep(200); 
+            }
+            catch (InterruptedException ex) { 
+                Logger.getLogger ( PrimeSearcher.class.getName () ).log ( Level.SEVERE, null, ex );
+                //Die interrupt Exception kann hier ingoniriert werden
+            }
         }
     }
     
