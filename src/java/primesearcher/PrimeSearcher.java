@@ -22,14 +22,32 @@ public class PrimeSearcher extends Thread{
         primes = new ArrayList<Integer>();
         btime = Calendar.getInstance().getTime();
         primes.add(2);
-        
+        current = 3;
     }
     
     
     @Override
     public void run() {
-        
+        while (!isInterrupted()) {
+            if(calculate)
+        }
     }
+    
+    /**
+     * Berechnet ob es sich um eine Primzahl handelt
+     * Code von:http://www.javafaq.nu/java-example-code-1025.html Author: 
+     * Eingesehen: 14.10.2013
+     * @return 
+     */
+    public boolean calculate() {
+        long sqrt = (long) Math.sqrt(current);
+        for (long i = 3; i <= sqrt; i += 2) {
+            if (current % i == 0) return false;  //Wenn es keine Primzahl ist
+        }
+        //Wird nur erreicht wenn es sich um eine Primzahl handelt.
+        return true;
+    }
+        
     
     /**
      * Gibt die letzte berechnete Primzahl zurueck
