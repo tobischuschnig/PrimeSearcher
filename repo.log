@@ -1,0 +1,171 @@
+commit 3d859af5c5029f08aaebbd917326b78b5e8eec54
+Author: tobischuschnig <tschuschnig@student.tgm.ac.at>
+Date:   Tue Oct 15 19:19:46 2013 +0200
+
+    final1.1
+    
+    Junit tests uebararbeitet umlaute hinausgegeben
+
+ build/test/classes/.netbeans_automatic_build       |   0
+ build/test/classes/.netbeans_update_resources      |   0
+ .../classes/primesearcher/HuntingServletTest.class | Bin 2369 -> 0 bytes
+ .../classes/primesearcher/PrimeSearcherTest.class  | Bin 2210 -> 0 bytes
+ .../web/WEB-INF/classes/.netbeans_automatic_build  |   0
+ .../web/WEB-INF/classes/.netbeans_update_resources |   0
+ .../classes/primesearcher/HuntingServlet.class     | Bin 2957 -> 2848 bytes
+ .../classes/primesearcher/PrimeSearcher.class      | Bin 2211 -> 2138 bytes
+ .../classes/primesearcher/PrimeServlet.class       | Bin 1667 -> 1570 bytes
+ build/web/WEB-INF/glassfish-web.xml                |  10 --
+ build/web/gfv3ee6.dpf                              |   0
+ test/primesearcher/HuntingServletTest.java         | 108 ---------------------
+ test/primesearcher/PrimeSearcherTest.java          |  90 +++++------------
+ 13 files changed, 26 insertions(+), 182 deletions(-)
+
+commit b6869c3329f283906b97c74e3d03a8a43c124f11
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Tue Oct 15 11:09:06 2013 +0200
+
+    Junit
+
+ build/test/classes/.netbeans_automatic_build       |   0
+ build/test/classes/.netbeans_update_resources      |   0
+ .../classes/primesearcher/HuntingServletTest.class | Bin 0 -> 2369 bytes
+ .../classes/primesearcher/PrimeSearcherTest.class  | Bin 0 -> 2210 bytes
+ nbproject/project.properties                       |   3 +-
+ test/primesearcher/HuntingServletTest.java         | 108 +++++++++++++++++++++
+ test/primesearcher/PrimeSearcherTest.java          | 107 ++++++++++++++++++++
+ 7 files changed, 217 insertions(+), 1 deletion(-)
+
+commit 1c3d7f29a9ce6cfe4fd5b6d96f13e94cdb3fed5f
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 23:15:06 2013 +0200
+
+    gitlog
+    
+    Neuer Commit durch erstellung eines gitlog
+
+ repo.log | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 86785a74732f10248f315ea2570d667e8eadb884
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 23:06:25 2013 +0200
+
+    Final
+    
+    Letzten Veraenderungen Performance Dokumentation etc.
+
+ .gitignore                                            |   1 +
+ .../classes/primesearcher/HuntingServlet.class        | Bin 2958 -> 2957 bytes
+ .../WEB-INF/classes/primesearcher/PrimeSearcher.class | Bin 2211 -> 2211 bytes
+ src/java/primesearcher/HuntingServlet.java            |   7 ++++---
+ src/java/primesearcher/PrimeSearcher.java             |  11 ++++++++---
+ 5 files changed, 13 insertions(+), 6 deletions(-)
+
+commit 43aae0d7ea384af8580dddedf8d73c683e564b75
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 21:58:15 2013 +0200
+
+    Kommentiert
+
+ .../classes/primesearcher/HuntingServlet.class     | Bin 2271 -> 2958 bytes
+ .../classes/primesearcher/PrimeSearcher.class      | Bin 2211 -> 2211 bytes
+ .../classes/primesearcher/PrimeServlet.class       | Bin 1666 -> 1667 bytes
+ src/java/primesearcher/HuntingServlet.java         |  37 +++++++++++++++------
+ src/java/primesearcher/PrimeSearcher.java          |  20 +++++++----
+ src/java/primesearcher/PrimeServlet.java           |  13 ++++----
+ 6 files changed, 46 insertions(+), 24 deletions(-)
+
+commit cdf16ef90b68ad0bacb7a3caa793cbf2066e2e16
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 20:34:07 2013 +0200
+
+    Redirect
+
+ .../WEB-INF/classes/primesearcher/PrimeServlet.class  | Bin 1666 -> 1666 bytes
+ src/java/primesearcher/PrimeServlet.java              |   3 ++-
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+commit 4e7da8399030cfc1fcad509ea5aa25ce512ede96
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 20:32:59 2013 +0200
+
+    PrimeSearcherfertig
+
+ .../classes/primesearcher/PrimeSearcher.class       | Bin 1796 -> 2211 bytes
+ src/java/primesearcher/PrimeSearcher.java           |  20 +++++++++++++++++++-
+ 2 files changed, 19 insertions(+), 1 deletion(-)
+
+commit 42cf9868c3902a5b9481a55e57a55148ea625969
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 20:14:20 2013 +0200
+
+    PrimeSearcher
+    
+    Suche optimiert und verbessert
+
+ .../classes/primesearcher/PrimeSearcher.class      | Bin 1264 -> 1796 bytes
+ src/java/primesearcher/PrimeSearcher.java          |  22 +++++++++++++++++++--
+ 2 files changed, 20 insertions(+), 2 deletions(-)
+
+commit 6ff2162557192ce7c01ad8b314508343e8e02891
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 20:03:56 2013 +0200
+
+    PrimeSearcher verbessert
+
+ .../classes/primesearcher/PrimeSearcher.class      | Bin 792 -> 1264 bytes
+ src/java/primesearcher/PrimeSearcher.java          |  30 +++++++++++++++++++++
+ 2 files changed, 30 insertions(+)
+
+commit 64d9da53e7425e5594f1dbda310177d3008b6731
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 19:45:42 2013 +0200
+
+    PrimeServlet
+
+ src/java/primesearcher/PrimeServlet.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit fdca7d0590511d0bd1fd07a338c5c3b0f01627d2
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 19:45:19 2013 +0200
+
+    HuntingServlet
+
+ src/java/primesearcher/HuntingServlet.java | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 26df7403c0a5784e6c564e4627d57f855f215929
+Author: tobischuschnig <tobi@Tobiass-MacBook-Pro.local>
+Date:   Mon Oct 14 19:43:26 2013 +0200
+
+    firstcommit
+
+ build.xml                                          |   71 +
+ build/web/META-INF/MANIFEST.MF                     |    2 +
+ build/web/WEB-INF/beans.xml                        |    6 +
+ .../web/WEB-INF/classes/.netbeans_automatic_build  |    0
+ .../web/WEB-INF/classes/.netbeans_update_resources |    0
+ .../classes/primesearcher/HuntingServlet.class     |  Bin 0 -> 2271 bytes
+ .../classes/primesearcher/PrimeSearcher.class      |  Bin 0 -> 792 bytes
+ .../classes/primesearcher/PrimeServlet.class       |  Bin 0 -> 1666 bytes
+ build/web/WEB-INF/glassfish-web.xml                |   10 +
+ build/web/WEB-INF/web.xml                          |   24 +
+ build/web/gfv3ee6.dpf                              |    0
+ build/web/index.xhtml                              |   12 +
+ nbproject/ant-deploy.xml                           |  111 ++
+ nbproject/build-impl.xml                           | 1410 ++++++++++++++++++++
+ nbproject/genfiles.properties                      |    8 +
+ nbproject/private/private.properties               |    9 +
+ nbproject/private/private.xml                      |    4 +
+ nbproject/project.properties                       |   87 ++
+ nbproject/project.xml                              |   18 +
+ src/conf/MANIFEST.MF                               |    2 +
+ src/java/primesearcher/HuntingServlet.java         |  102 ++
+ src/java/primesearcher/PrimeSearcher.java          |   27 +
+ src/java/primesearcher/PrimeServlet.java           |   78 ++
+ web/WEB-INF/beans.xml                              |    6 +
+ web/WEB-INF/web.xml                                |   24 +
+ web/index.xhtml                                    |   12 +
+ 26 files changed, 2023 insertions(+)
